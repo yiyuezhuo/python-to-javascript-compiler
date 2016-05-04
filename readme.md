@@ -26,23 +26,23 @@ def erfs(x):
     return 1-(1+sum([b[i]*x**i for i in range(1,5)]))**(-4)
 ```
 
-->
+`->`
 
 ```javascript
-    function erfs(__args__,__kwargs__){
-        var x;
-        
-        x=__kwargs__.x;
-        
-        x=x || __args__[0];
-        
-        
-        
-        var b=[0,0.196854,0.115194,0.000344,0.019527];
-        return (1-(Math.pow((1+sum([range([1,5],{}).map(function(i){
-            return (b[i]*(Math.pow(x,i)));
-        })],{})),(-4))));
-    }
+function erfs(__args__,__kwargs__){
+	var x;
+	
+	x=__kwargs__.x;
+	
+	x=x || __args__[0];
+	
+	
+	
+	var b=[0,0.196854,0.115194,0.000344,0.019527];
+	return (1-(Math.pow((1+sum([range([1,5],{}).map(function(i){
+		return (b[i]*(Math.pow(x,i)));
+	})],{})),(-4))));
+}
 ```
 
 tuple assignment
@@ -51,7 +51,7 @@ tuple assignment
 a,b=a,test
 ```
 
-->
+`->`
 
 ```javascript
 !function(){
@@ -66,7 +66,7 @@ slice
 tl[0]/(1+cfrac(tl[1:]))
 ```
 
-->
+`->`
 
 ```javascript
 (tl[0]/(1+cfrac([tl.slice(1,undefined,undefined)],{})))
@@ -79,7 +79,7 @@ if roll and x>=(a-1)/(a+b-2):
 	return 1-I(1-x,b,a,n,roll=False)
 ```
 
-->
+`->`
 
 ```javascript
 if(roll&&(x>=((a-1)/((a+b)-2)))){ 
@@ -88,7 +88,7 @@ if(roll&&(x>=((a-1)/((a+b)-2)))){
 ```
 
 if you worry you must call function as form `func([1,2,3],{})` for "pure function", you can export it through a `make.json` 
-file, it can auto generate module scope and setting backend javascript binary (for this, I define `range` function and
+file, it can auto generate module scope and setting backend javascript binary (for this, I define `range`,`sum` function and
 replace slice funtion).
 
 as 
@@ -113,11 +113,15 @@ as
 					"F_ppf"],
 	"comment":"@Author yiyuezhuo"
 }
+
 ```
+
+then you call norm_cdf(normal distribution function) as the form `stat3.norm_cdf(0,0,1)`.
+
 
 ## TODO
 
-I can't implement these because I can't use it in that project.
+I don't implement these because I can't use it in that project.
 
 * `for`
 * `class`
